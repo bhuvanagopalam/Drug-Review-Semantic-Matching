@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+unified_drug_data.csv
+drug_reviews_with_scores.csv
+.DS_Store
