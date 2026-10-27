@@ -9,6 +9,14 @@ PostgreSQL table, so the two datasets can be queried together.
 Course project for CSCI 5707 Database Systems, University of Minnesota, Fall 2025, with Mohith Siva
 Sai Bayana, Abhay Shashidhara and Sahitya Avadhanam.
 
+## Why a soft key
+
+An exact join between the two tables barely works. Of the 3,107 reviews (502 distinct drug names as
+patients typed them), an exact match on the generic-name column links **4.9%** of reviews, or 6.6%
+of the distinct names; allowing substring matches in either direction only reaches 14.7%. The rest
+are brand names (Xanax, Lyrica, Vyvanse, Prilosec), salts and spellings the reference table does
+not use. (Measured with pandas on the two files in `data/`.)
+
 ## What it does
 
 1. **Load** two tables into PostgreSQL: `generic_drugs` (21,362 rows: generic name, package, dosage
